@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Otp.css">
+</head>
+<body>
+    
+    <h1>OTP REGISTRATION</h1>
+    <h2 id="otp">Your OTP Code</h2>
+    <input type="text" id="enterotp">
+    <button type="button" onclick="time2()">Verify</button>
+     <h3 id="output"></h3>
+     
+    <script>
+        function time(){
+        let otp=document.querySelector("#otp")
+        let randomotp=Math.floor(1000+Math.random()*9000)
+        otp.innerHTML= randomotp
+        }
+        function time2(){
+            let a=document.querySelector("#otp").innerHTML;
+            let enterotp=document.querySelector("#enterotp").value;
+            let output=document.querySelector("#output")
+
+            if (a==enterotp)
+            output.innerHTML="SUCCESS"
+            else
+            output.innerHTML="Enter Valid OTP"
+            
+
+        }
+        setInterval(time,5000)
+    </script>
+</body>
+</html>
